@@ -1,0 +1,3 @@
+##13
+-Khởi tạo dự án dùng câu lệnh npm init
+-Running task : npm run <task-name> là chạy nhanh các câu task bằng cách gán đường dẫn ở scripts file package.json

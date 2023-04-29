@@ -1,0 +1,27 @@
+{
+  "name": "udemy-be-tutorial",
+  "version": "1.0.0",
+  "description": "Work hard in silent!!",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThachDH/Udemy-BE-tutorial.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "Thach Ho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThachDH/Udemy-BE-tutorial/issues"
+  },
+  "homepage": "https://github.com/ThachDH/Udemy-BE-tutorial#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
