@@ -23,14 +23,12 @@ const path = require('path');
 require('dotenv').config();
 const configViewEngine = require('./config/viewEngine');
 const websRoute = require('./routes/web');
-const mysql = require('mysql2');
-
+const connection = require('./config/database')
 
 
 
 
 // console.log('>>>> check env: ', process.env)
-
 const app = express() // app expresss
 const port = process.env.PORT || 8888;
 const hostname = process.env.HOST_NAME;
@@ -43,20 +41,13 @@ app.listen(port, hostname, () => {
 })
 
 //test connection
-//create the connection to database
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3307, //default : 3306
-    user: 'root',
-    password: '123456',
-    database: 'sa'
-});
+
 // simple query
 connection.query(
     'select*from Users u',
     function (err, results, fields) {
         console.log('results', results); // results contains rows returned by server
-        console.log('fields', fields); // fields contains extra meta data about results, if available
+        // console.log('fields', fields); // fields contains extra meta data about results, if available
     }
 );
 
