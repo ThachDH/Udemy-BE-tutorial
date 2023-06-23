@@ -23,7 +23,7 @@ const path = require('path');
 require('dotenv').config();
 const configViewEngine = require('./config/viewEngine');
 const websRoute = require('./routes/web');
-const connection = require('./config/database')
+const connection = require('./config/database');
 
 
 
@@ -36,12 +36,22 @@ const hostname = process.env.HOST_NAME;
 //config template engine,static files
 configViewEngine(app);
 
+//config req.body
+app.use(express.json()) // for json
+app.use(express.urlencoded({ extended: true })); // for form data
+
 app.listen(port, hostname, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
 //test connection
-
+// connection.query(
+// 'select*from Users u ',
+// function(err, results, fields) {
+//     console.log('results',results);
+//     console.log('fields',fields);
+// }
+// );
 
 
 // Khai báo route 
