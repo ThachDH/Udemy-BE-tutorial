@@ -21,7 +21,7 @@
     }
 
     tr:hover {
-        background-color:#ccc;
+        background-color: #ccc;
     }
 </style>
 
@@ -31,34 +31,57 @@
         <a href="create">Create Users</a>
     </div>
     <div class="'table-container">
-        <%= JSON.stringify(listUsers) %>
-    <table>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Points</th>
-            <th>Actions</th>
-        </tr>
-        <tr>
-            <td>Peter</td>
-            <td>Griffin</td>
-            <td>$100</td>
-            <td>
-                <button>Edit</button>
-                <button>Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Lois</td>
-            <td>Griffin</td>
-            <td>$150</td>
-            <td>
-                <button>Edit</button>
-                <button>Delete</button>
-            </td>
-        </tr>
-    </table>
-</div>
+        <table>
+            <tr>
+                <th>STT</th>
+                <th>Email</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+            <!-- <% for(let i=0; i< listUsers.length; i++ ) { %>
+                <tr>
+                    <td>
+                        <%= listUsers[i].id %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].email %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].name %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].city %>
+                    </td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                <% } %> -->
+
+                    <% listUsers.map(function(e) { %>
+                        <tr>
+                            <td>
+                                <%= e.id %>
+                            </td>
+                            <td>
+                                <%= e.email %>
+                            </td>
+                            <td>
+                                <%= e.name %>
+                            </td>
+                            <td>
+                                <%= e.city %>
+                            </td>
+                            <td>
+                                <button>Edit</button>
+                                <button>Delete</button>
+                            </td>
+                        </tr>
+                        <% }) %>
+        </table>
+    </div>
     <!-- <div class='form-add-new'>
         <form action='create-user' method="get">
             <fieldset>
